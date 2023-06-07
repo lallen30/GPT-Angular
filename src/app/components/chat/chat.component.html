@@ -1,0 +1,32 @@
+<div class="header">
+  <div class="logo">
+    <img src="assets/images/bluestone-apps-logo-header.png" alt="BluestoneApps Logo">
+  </div>
+  <div class="title">
+    <h1>BluestoneApps AI</h1>
+  </div>
+</div>
+<div class="chat-box">
+  <div class="form-box">
+    <h3>Ask BluestoneApps AI:</h3>
+    <form class="input-box" (ngSubmit)="onFormSubmit($event)">
+      <div class="textarea-container">
+        <textarea [(ngModel)]="userInput" name="userInput" required></textarea>
+      </div>
+      <div class="button-container">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+  <div class="answer-box">
+    <h3>BluestoneApps AI Answers:</h3>
+    <div *ngFor="let message of chatHistory">
+      <div *ngIf="message.role === 'user'" class="user-message">
+        <p [innerHTML]="message.content"></p>
+      </div>
+      <div *ngIf="message.role === 'system'" class="system-message">
+        <p [innerHTML]="message.content"></p>
+      </div>
+    </div>
+  </div>
+</div>
