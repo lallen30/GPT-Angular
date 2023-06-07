@@ -1,4 +1,4 @@
-<OPENAI_SECRET_KEY> // Replace with your actual API key
+In openai.service.ts replace <OPENAI_SECRET_KEY> with your actual API key
 
 -------------------------------------------------------------------------------------------------------
 
